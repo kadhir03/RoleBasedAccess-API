@@ -60,13 +60,10 @@ app.use((err, req, res, next) => {
     });
 });
 
-
 // Llamada a la función para sincronizar modelos
-syncModels(sequelize);
-//sequelize.sync({ force: true })   //ese codigo borra la base de datos y crea una nueva
-// Sincroniza el modelo con la base de datos
-sequelize.sync()
+syncModels(sequelize)
   .then(() => {
+    // Una vez sincronizados los modelos, se inicia la aplicación
     console.log('Database and tables synced!');
     app.listen(PORT, () => {
       console.log(`Server listening on http://localhost:${PORT}`);
