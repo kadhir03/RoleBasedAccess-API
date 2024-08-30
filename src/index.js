@@ -65,7 +65,7 @@ app.use((err, req, res, next) => {
 syncModels(sequelize);
 //sequelize.sync({ force: true })   //ese codigo borra la base de datos y crea una nueva
 // Sincroniza el modelo con la base de datos
-sequelize.sync()
+sequelize.sync({ force: true })
   .then(() => {
     console.log('Database and tables synced!');
     app.listen(PORT, () => {
