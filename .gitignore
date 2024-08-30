@@ -41,4 +41,7 @@ data/
 .env
 
 
+/docker-compose.yml
+docker-compose.yml/
+
 .nvmrc
